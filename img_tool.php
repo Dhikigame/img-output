@@ -26,7 +26,8 @@ function img_size($img){
     //画像のサイズ情報を取得
     $image = getimagesize($img);
     if($image){
-        $width = floor(360 * $image[0] / $image[1]);//heightのサイズを360pxに固定し、それに合わせた比率のwidthのサイズを設定(height：width=360:X)
+        //heightのサイズを360pxに固定し、それに合わせた比率のwidthのサイズを設定(height：width=360:X)
+        $width = floor(360 * $image[0] / $image[1]);
         //widthのサイズが640pxを超えていたら640pxに固定
         if($width > 640){
             $width = 640;
